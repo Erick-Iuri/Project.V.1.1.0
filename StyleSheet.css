@@ -54,17 +54,55 @@ body {
 .icon-link {
     width: 30px;
     height: 30px;
+
+    transition: 0.8s ease;
+}
+
+.icon-link:hover {
+    transform: translateY(-8px);
 }
 
 .icon-git {
     width: 30px;
     height: 30px;
+
+    transition: 0.8s ease;
+}
+
+.icon-git:hover {
+    transform: translateY(-8px);
 }
 
 /* sessão 01 */
 
+.Square {
+    position: absolute;
+    width: 49%;
+    height: 800px;
+
+    background: #0A1721;
+    z-index: -1;
+
+    animation: SquareAnimation linear 5s infinite;
+}
+
+@keyframes SquareAnimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(+30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 .container-s01 {
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .hero-s01 {
@@ -85,6 +123,14 @@ body {
     color: var(--cor--font--);
 }
 
+.texto-s01 h3 {
+    font-size:40px;
+    margin-bottom: 30px;
+
+    font-weight: lighter;
+    font-family: 'Pacifico', cursive;
+}
+
 .texto-s01 h2 {
     font-weight: lighter;
 }
@@ -99,9 +145,37 @@ body {
     text-decoration: none;
     margin-top: 30px;
     display: inline-block;
+    border: 1px solid white;
+    padding: 7px 30px;
 
-    border-bottom: 1px solid white;
+    position: relative;
+    transition: 0.5s ease;
 }
+
+.contatos-bs01 p a:hover {
+    color: #0A1721;
+    font-weight: 300;
+    border: 1px solid #def818;
+}
+
+.contatos-bs01 p a::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 0;
+
+    background-color: #def818;
+    top: 0;
+    left: 0;
+    transition: width 1s;
+    z-index: -1;
+}
+
+.contatos-bs01 p a:hover::before {
+    width: 100%;
+}
+
+
 
 
 .arrow-projects {
@@ -119,7 +193,26 @@ body {
     text-decoration: none;
     border-bottom: 1px solid white;
     padding: 10px 0;
+
+    animation: CimaBaixo 4s ease infinite;
 }
+
+@keyframes CimaBaixo {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
 
 /* sessão 02 */
 
@@ -137,7 +230,17 @@ body {
 
     border-bottom: 1px solid var(--cor--font--);
     cursor: pointer;
+
+    position: relative;
+
+    transition: 0.5s linear;    
 }
+
+.Tittle-space-x-s02 div p:hover {
+    color: #def818;
+    border-bottom: 1px solid #def818;
+}
+
 
 /* api space X */
 
@@ -154,19 +257,29 @@ body {
 
 .container-api-s ul {
     font-size: 25px;
-    margin: 0px 30px;
+    margin: 0px 10px;
 
     list-style: none;
+    position: relative;
+
 }
 
 .container-api-s ul li {
-    padding: 10px 30px;
+    padding: 10px 10px 10px 20px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white ;
+    width: 160%;
 }
+
+
+
+/* @ MEDIA QUERYS */
 
 @media (max-width:960px) {
     .texto-s01 {
         width: 100%;
     }
+
 }
 
 @media (max-width:620px) {
