@@ -308,4 +308,8 @@ body {
     .Container-s2-hero div {
         width: auto;
     }
+
+    .arrow-projects {
+        display: none;
+    }
 }
